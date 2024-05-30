@@ -1,0 +1,2351 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.Altibase-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B8%EC%8A%A4%ED%86%A8%EB%9F%AC/">
+      
+      
+        <link rel="next" href="../3.Altibase-%EC%A0%9C%EA%B1%B0-%EB%B0%8F-%EB%A9%94%ED%83%80-%EB%8B%A4%EC%9A%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>2.패키지 인스톨러를 이용한 제품 설치 - Altibase Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../custom/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2패키지-인스톨러를-이용한-제품-설치" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../.." title="Altibase Documentation" class="md-header__button md-logo" aria-label="Altibase Documentation" data-md-component="logo">
+      
+  <img src="../../../img/logo_w.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Altibase Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.패키지 인스톨러를 이용한 제품 설치
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to Altibase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../0.%EC%84%9C%EB%AC%B8/" class="md-tabs__link">
+          
+  
+  Admin
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Developer/" class="md-tabs__link">
+          
+  
+  Developer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Tools/" class="md-tabs__link">
+          
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Version-dependent%20Tools/" class="md-tabs__link">
+          
+  
+  Version dependent Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Altibase Documentation" class="md-nav__button md-logo" aria-label="Altibase Documentation" data-md-component="logo">
+      
+  <img src="../../../img/logo_w.png" alt="logo">
+
+    </a>
+    Altibase Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Altibase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Admin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.%EC%84%9C%EB%AC%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    서문
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.Altibase-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B8%EC%8A%A4%ED%86%A8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.Altibase 패키지 인스톨러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2.패키지 인스톨러를 이용한 제품 설치
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2.패키지 인스톨러를 이용한 제품 설치
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#시스템-요구사항" class="md-nav__link">
+    <span class="md-ellipsis">
+      시스템 요구사항
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="시스템 요구사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#메모리" class="md-nav__link">
+    <span class="md-ellipsis">
+      메모리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#하드-디스크" class="md-nav__link">
+    <span class="md-ellipsis">
+      하드 디스크
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#네트워크" class="md-nav__link">
+    <span class="md-ellipsis">
+      네트워크
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 패키지 인스톨러">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altibase-설치-기본-순서" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 설치 기본 순서
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#패키지-인스톨러-다운로드" class="md-nav__link">
+    <span class="md-ellipsis">
+      패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-제품-설치" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 제품 설치
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 제품 설치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#설치-환경-사전-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 환경 사전 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#패키지-인스톨러-다운로드_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-시작" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 시작
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-디렉터리-입력-및-설치-타입-선택" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 디렉터리 입력 및 설치 타입 선택
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#시스템-파라미터-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      시스템 파라미터 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-프로퍼티-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 프로퍼티 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설정한-프로퍼티-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      설정한 프로퍼티 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-제품-설치_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 제품 설치
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-라이선스-입력" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 라이선스 입력
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-빠른-설정-가이드-미리-보기" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 빠른 설정 가이드 미리 보기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-종료" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 종료
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-후-작업" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 후 작업
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-클라이언트-제품-설치" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 제품 설치
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 클라이언트 제품 설치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#설치-환경-사전-확인_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 환경 사전 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-다운로드" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드-설정_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-시작_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 시작
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-디렉터리-입력-및-설치-타입-선택_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 디렉터리 입력 및 설치 타입 선택
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-클라이언트-프로퍼티-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 프로퍼티 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-클라이언트-제품-설치_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 제품 설치
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-종료_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 종료
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-후-작업_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 후 작업
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.Altibase-%EC%A0%9C%EA%B1%B0-%EB%B0%8F-%EB%A9%94%ED%83%80-%EB%8B%A4%EC%9A%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.Altibase 제거 및 메타 다운그레이드
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B8%EC%8A%A4%ED%86%A8%EB%9F%AC%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%9C%ED%92%88-%ED%8C%A8%EC%B9%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.패키지 인스톨러를 이용한 제품 패치
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A.%EB%B6%80%EB%A1%9D-%EC%84%A4%EC%B9%98-%EC%A0%84-%ED%99%95%EC%9D%B8-%EC%82%AC%ED%95%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A.부록: 설치 전 확인 사항
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Altibase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Altibase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version dependent Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Version dependent Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-dependent%20Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Altibase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#시스템-요구사항" class="md-nav__link">
+    <span class="md-ellipsis">
+      시스템 요구사항
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="시스템 요구사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#메모리" class="md-nav__link">
+    <span class="md-ellipsis">
+      메모리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#하드-디스크" class="md-nav__link">
+    <span class="md-ellipsis">
+      하드 디스크
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#네트워크" class="md-nav__link">
+    <span class="md-ellipsis">
+      네트워크
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 패키지 인스톨러">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altibase-설치-기본-순서" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 설치 기본 순서
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#패키지-인스톨러-다운로드" class="md-nav__link">
+    <span class="md-ellipsis">
+      패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-제품-설치" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 제품 설치
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 제품 설치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#설치-환경-사전-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 환경 사전 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#패키지-인스톨러-다운로드_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-시작" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 시작
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-디렉터리-입력-및-설치-타입-선택" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 디렉터리 입력 및 설치 타입 선택
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#시스템-파라미터-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      시스템 파라미터 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-프로퍼티-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 프로퍼티 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설정한-프로퍼티-확인" class="md-nav__link">
+    <span class="md-ellipsis">
+      설정한 프로퍼티 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-제품-설치_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 제품 설치
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-라이선스-입력" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 라이선스 입력
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-빠른-설정-가이드-미리-보기" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 빠른 설정 가이드 미리 보기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-종료" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 종료
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-후-작업" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 후 작업
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altibase-클라이언트-제품-설치" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 제품 설치
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altibase 클라이언트 제품 설치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#설치-환경-사전-확인_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 환경 사전 확인
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-다운로드" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 다운로드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-모드-설정_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 모드 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-패키지-인스톨러-시작_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 패키지 인스톨러 시작
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-디렉터리-입력-및-설치-타입-선택_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 디렉터리 입력 및 설치 타입 선택
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-클라이언트-프로퍼티-설정" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 프로퍼티 설정
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altibase-클라이언트-제품-설치_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altibase 클라이언트 제품 설치
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-종료_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 종료
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#설치-후-작업_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      설치 후 작업
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2패키지-인스톨러를-이용한-제품-설치">2.패키지 인스톨러를 이용한 제품 설치<a class="headerlink" href="#2패키지-인스톨러를-이용한-제품-설치" title="Permanent link">#</a></h1>
+<p>이 장은 다음의 절을 포함한다.</p>
+<ul>
+<li>
+<p><a href="#시스템-요구사항">시스템 요구사항</a></p>
+</li>
+<li>
+<p><a href="#altibase-패키지-인스톨러">Altibase 패키지 인스톨러</a></p>
+</li>
+<li>
+<p><a href="#altibase-제품-설치">Altibase 제품 설치</a></p>
+</li>
+<li>
+<p><a href="#altibase-클라이언트-제품-설치">Altibase 클라이언트 제품 설치</a></p>
+</li>
+</ul>
+<h3 id="시스템-요구사항">시스템 요구사항<a class="headerlink" href="#시스템-요구사항" title="Permanent link">#</a></h3>
+<p>Altibase를 설치하고 운영하기 위해서 필요한 시스템 요구사항은 다음과 같다.</p>
+<p>이 장에서 언급되는 요구사항과 권장사항은 일반적인 용도의 데이터베이스를 가정한 것이다. 따라서 사용자의 데이터베이스 시스템이나 용도에 따라서 달라질 수 있으므로, 시스템 요구사항에 대한 자세한 사항은 <a href="http://support.altibase.com">Altibase 고객서비스포털</a>로 문의한다.</p>
+<h4 id="메모리">메모리<a class="headerlink" href="#메모리" title="Permanent link">#</a></h4>
+<p>64-bit OS: 최소 1GB 이상 (권장: 2GB 이상, 최대 제한 없음)</p>
+<h4 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">#</a></h4>
+<p>1 CPU 이상 (권장: 2 CPU 이상)</p>
+<h4 id="하드-디스크">하드 디스크<a class="headerlink" href="#하드-디스크" title="Permanent link">#</a></h4>
+<p>Altibase가 사용하는 디스크에는 데이터를 저장하는 테이블스페이스, 트랜잭션 로그 저장과 Altibase 소프트웨어 설치에 필요한 충분한 공간이 있어야 한다. Altibase 소프트웨어와 트랜잭션 로그를 위한 공간은 적어도 각각 1GB 이상이어야 한다.</p>
+<p>원활한 데이터베이스 운영을 위해서는 적어도 12 GB 이상의 디스크 여유 공간을 가지기를 권장한다.</p>
+<h4 id="네트워크">네트워크<a class="headerlink" href="#네트워크" title="Permanent link">#</a></h4>
+<p>이중화 기능 사용 시 전용선 사용을 권장한다.</p>
+<h3 id="altibase-패키지-인스톨러">Altibase 패키지 인스톨러<a class="headerlink" href="#altibase-패키지-인스톨러" title="Permanent link">#</a></h3>
+<h4 id="altibase-설치-기본-순서">Altibase 설치 기본 순서<a class="headerlink" href="#altibase-설치-기본-순서" title="Permanent link">#</a></h4>
+<p>Altibase 제품 설치하려면, 다음 단계대로 수행한다. 각 과정에 대한 상세한 설명은 운영 체제에 따른 제품 설치에서 자세히 설명한다.</p>
+<ol>
+<li>
+<p>설치 환경 사전 확인</p>
+</li>
+<li>
+<p>Altibase 패키지 인스톨러 다운로드</p>
+</li>
+<li>
+<p>Altibase 패키지 인스톨러 실행</p>
+</li>
+<li>
+<p>설치 디렉터리 입력 및 설치 타입 선택</p>
+</li>
+<li>
+<p>Altibase 프로퍼티 설정</p>
+</li>
+<li>
+<p>Altibase 프로퍼티 확인</p>
+</li>
+<li>
+<p>Altibase 제품 설치</p>
+</li>
+<li>
+<p>Altibase 라이선스 입력</p>
+</li>
+<li>
+<p>Altibase 빠른 설정 가이드 미리 보기</p>
+</li>
+<li>
+<p>설치 완료</p>
+</li>
+<li>
+<p>설치 후 작업</p>
+</li>
+</ol>
+<h4 id="패키지-인스톨러-다운로드">패키지 인스톨러 다운로드<a class="headerlink" href="#패키지-인스톨러-다운로드" title="Permanent link">#</a></h4>
+<p><a href="http://support.altibase.com/">Altibase 고객지원서비스 포털</a>을 방문하여 본인의 운영 체제에 적합한 인스톨러를 다운로드 받는다.</p>
+<p>Altibase 패키지 인스톨러의 이름은 아래 예에서 보여주는 규칙을 따른다.</p>
+<ul>
+<li>
+<dl>
+<dt>Altibase 서버 패키지 인스톨러</dt>
+<dd>altibase-server-7.3.0.0.0-LINUX-X86-64bit-release.run</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Altibase 클라이언트 패키지 인스톨러</dt>
+<dd>altibase-client-7.3.0.0.0-LINUX-X86-64bit-release.run</dd>
+</dl>
+</li>
+</ul>
+<p>Altibase 서버 패키지와 클라이언트 패키지는 다른 패키지로 분리되어 있다. 그러나 Altibase 서버 패키지는 클라이언트 패키지를 포함한다.</p>
+<p>Altibase 패키지 인스톨러는 아래의 OS 별로 제공된다. 설치 전 아래의 명령어로 OS 관련 정보를 확인한 후 적절한 패키지 인스톨러를 선택한다.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uname<span class="w"> </span>-a
+Linux<span class="w"> </span>rhel6-x64<span class="w"> </span><span class="m">2</span>.6.32-71.el6.x86_64<span class="w"> </span><span class="c1">#1 SMP Wed Sep 1 01:33:01 EDT 2010 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>CPU</th>
+<th>Version</th>
+<th>Bit (Server)</th>
+<th>Bit (Client)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIX</td>
+<td>PowerPC</td>
+<td>6.1 tl03 이상</td>
+<td>64-bit</td>
+<td>64-bit</td>
+</tr>
+<tr>
+<td>HP-UX</td>
+<td>IA64</td>
+<td>11.31 이상</td>
+<td>64-bit</td>
+<td>64-bit</td>
+</tr>
+<tr>
+<td>LINUX</td>
+<td>x86-64 (GNU glibc 2.12 ~ 2.33)</td>
+<td>redhat 6.0 이상</td>
+<td>64-bit</td>
+<td>64-bit</td>
+</tr>
+<tr>
+<td>LINUX on Power</td>
+<td>PowerPC 7</td>
+<td>redhat 6.5 이상</td>
+<td>64-bit</td>
+<td>64-bit</td>
+</tr>
+<tr>
+<td>LINUX on Power (Little Endian)</td>
+<td>PowerPC 8 (Little endian)</td>
+<td>redhat 7.2 이상</td>
+<td>64-bit</td>
+<td>64-bit</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>-</td>
+<td>10 이상</td>
+<td>-</td>
+<td>64-bit</td>
+</tr>
+</tbody>
+</table>
+<p>Altibase 7.3 은 JDK 1.8이상에서 호환된다.</p>
+<h4 id="설치-모드">설치 모드<a class="headerlink" href="#설치-모드" title="Permanent link">#</a></h4>
+<p>제품을 설치하기 위해 Altibase 패키지 인스톨러는 다음 두 가지 모드로 시작할 수 있다.</p>
+<ul>
+<li>
+<p>대화형 커맨드 라인 모드: DISPLAY 환경변수를 설정하지 않았을 때 이 모드로 실행된다.</p>
+</li>
+<li>
+<p>GUI (Graphical User Interface): DISPLAY 환경변수를 설정했을 때 이 모드로 실행된다.</p>
+</li>
+</ul>
+<h3 id="altibase-제품-설치">Altibase 제품 설치<a class="headerlink" href="#altibase-제품-설치" title="Permanent link">#</a></h3>
+<p>이 절에서는 유닉스에서 Altibase 제품을 설치하는 방법을 설명한다.</p>
+<ul>
+<li>
+<p><a href="#설치-환경-사전-확인">설치 환경 사전 확인</a></p>
+</li>
+<li>
+<p><a href="#패키지-인스톨러-다운로드_1">패키지 인스톨러 다운로드</a></p>
+</li>
+<li>
+<p><a href="#설치-모드-설정">설치 모드 설정</a></p>
+</li>
+<li>
+<p><a href="#altibase-패키지-인스톨러-시작">Altibase 패키지 인스톨러 시작</a></p>
+</li>
+<li>
+<p><a href="#설치-디렉터리-입력-및-설치-타입-선택">설치 디렉터리 입력 및 설치 타입 선택</a></p>
+</li>
+<li>
+<p><a href="#시스템-파라미터-확인">시스템 파라미터 확인</a></p>
+</li>
+<li>
+<p><a href="#altibase-프로퍼티-설정">Altibase 프로퍼티 설정</a></p>
+</li>
+<li>
+<p><a href="#설정한-프로퍼티-확인">설정한 프로퍼티 확인</a></p>
+</li>
+<li>
+<p><a href="#altibase-제품-설치_1">Altibase 제품 설치</a></p>
+</li>
+<li>
+<p><a href="#altibase-라이선스-입력">Altibase 라이선스 입력</a></p>
+</li>
+<li>
+<p><a href="#altibase-빠른-설정-가이드-미리-보기">Altibase 빠른 설정 가이드 미리 보기</a></p>
+</li>
+<li>
+<p><a href="#설치-종료">설치 종료</a></p>
+</li>
+<li>
+<p><a href="#설치-후-작업">설치 후 작업</a></p>
+</li>
+</ul>
+<h4 id="설치-환경-사전-확인">설치 환경 사전 확인<a class="headerlink" href="#설치-환경-사전-확인" title="Permanent link">#</a></h4>
+<p>Altibase 패키지 인스톨러는 제품을 설치하기 전에 설치할 장비의 환경이 성공적인 설치를 위한 요구사항을 만족하는지를 알기 위해서 먼저 환경을 검사한다. 이 과정은 그래픽 유저 인터페이스로 보여 주지 않고 수행된다.</p>
+<p>이 과정 중에 Altibase 패키지 인스톨러는 설치할 서버 장비에 대해서 다음의 정보를 확인한다.</p>
+<ul>
+<li>
+<p>운영 체제 이름과 버전</p>
+</li>
+<li>
+<p>운영 체제의 모드 (64-bit)</p>
+</li>
+</ul>
+<p>Altibase 패키지 인스톨러가 확인한 정보와 일치하지 않으면, 에러 메시지를 반환하고 설치는 중단된다. 앞선 단계에서의 시스템 구성의 문제를 발견하는 것이 설치 중에 문제에 부딪힐 가능성을 줄여주기 때문이다.</p>
+<h4 id="패키지-인스톨러-다운로드_1">패키지 인스톨러 다운로드<a class="headerlink" href="#패키지-인스톨러-다운로드_1" title="Permanent link">#</a></h4>
+<p>Altibase 패키지 인스톨러는 <a href="http://support.altibase.com/">Altibase 고객지원서비스 포털</a>을 방문하여 본인의 운영 체제에 적합한 인스톨러를 다운로드 받는다.</p>
+<p>Altibase가 제공하는 운영 체제별 인스톨러는 <a href="#패키지-인스톨러-다운로드">패키지 인스톨러 다운로드</a>를 참조하기 바란다.</p>
+<h4 id="설치-모드-설정">설치 모드 설정<a class="headerlink" href="#설치-모드-설정" title="Permanent link">#</a></h4>
+<p>제품을 설치하기 위해 Altibase 패키지 인스톨러는 다음 두 가지 모드로 시작할 수 있다.</p>
+<ul>
+<li>
+<p>대화형 커맨드 라인 모드: DISPLAY 환경변수를 설정하지 않았을 때 사용한다.</p>
+</li>
+<li>
+<p>GUI (Graphical User Interface): DISPLAY 환경변수를 설정했을 때 사용한다.</p>
+</li>
+</ul>
+<p>이 매뉴얼에서 Altibase 패키지 인스톨러는 설치 모드를 GUI로 설정하였다는 전제 하에 설명한다.</p>
+<h5 id="gui-모드-설정">GUI 모드 설정<a class="headerlink" href="#gui-모드-설정" title="Permanent link">#</a></h5>
+<p>사용자는 Altibase 패키지 인스톨러를 GUI 모드로 실행할 수 있다. 호스트 컴퓨터에서 DISPLAY 환경변수를 다음과 같이 설정해야 한다.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>setenv<span class="w"> </span>DISPLAY<span class="w"> </span>&lt;machine<span class="w"> </span>name&gt;:0.0
+</code></pre></div>
+<p><machine_name>은 Altibase 패키지 인스톨러가 실행되는 것을 보여줄 컴퓨터의 IP주소 또는 호스트 이름이다. Cshell은 <code>setenv</code>를 사용하고, Korn Shell은 <code>export DISPLAY=&lt;machine name&gt;:0.0</code>으로 설정한다.</p>
+<p>만약 호스트 컴퓨터가 아닌 원격지에서 Altibase 패키지 인스톨러가 GUI 모드로 실행되는 것을 볼 수 있게 허락하려면 원격 컴퓨터에서 아래의 명령어를 실행한다.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>xhost<span class="w"> </span>+
+</code></pre></div>
+<h4 id="altibase-패키지-인스톨러-시작">Altibase 패키지 인스톨러 시작<a class="headerlink" href="#altibase-패키지-인스톨러-시작" title="Permanent link">#</a></h4>
+<p>유닉스 사용자는 Altibase 패키지 인스톨러를 다운로드 한 후 chmod로 파일의 권한을 변경해야 실행할 수 있다.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>altibase-server-7.3.0.0.0-LINUX-X86-64bit-release.run
+</code></pre></div>
+<p>Altibase 패키지 인스톨러를 실행한다.</p>
+<div class="highlight"><pre><span></span><code>$./altibase-server-7.3.0.0.0-LINUX-X86-64bit-release.run
+</code></pre></div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/da9973bd8595388a63a8cb5bdc861118.png" width="720" /> 
+설치 모드를 GUI 모드로 설정하였다면, 왼쪽 이미지 같은 시작 패널이 보여진다.</p>
+</div>
+<h4 id="설치-디렉터리-입력-및-설치-타입-선택">설치 디렉터리 입력 및 설치 타입 선택<a class="headerlink" href="#설치-디렉터리-입력-및-설치-타입-선택" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/4590cc03f9412e29d691b5733f309f6e.png" width="720" /> 
+왼쪽의 설치 디렉터리 패널에서는 Altibase 홈 디렉터리, 즉 Altibase가 설치될 디렉터리와 패키지 설치 타입을 선택한다.<br>
+Altibase 제품 설치를 원하는 경우 "Full Installation"을, 기존에 설치된 버전에 대한 패치를 원하는 경우 "Patch Installation"을 선택한다.</p>
+</div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/3cb1b47a6d6a3dffd96b854469871644.png" width="720" /> 
+사용자가 입력한 디렉터리에 Altibase 제품이 이미 설치되어 있다면, 경고 메시지가 다이얼로그 박스에 보여진다. 이 경우 다른 디렉터리를 선택하든지, 그 디렉터리에 설치된 제품을 먼저 언인스톨 해야한다.</p>
+</div>
+<h4 id="시스템-파라미터-확인">시스템 파라미터 확인<a class="headerlink" href="#시스템-파라미터-확인" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/fc2a996b31a60f8bf22b1e67d667c030.png" width="720" /> </p>
+<p>왼쪽의 커널 이미지는 설정해야 할 시스템 커널 파라미터와 어떻게 설정하는지를 보여준다. <br>시스템 커널 파라미터 설정은 root 계정으로 수행해야 한다. 또한 어떤 시스템은 커널 파라미터 설정 후에 재부팅이 필요할 수도 있다.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>커널 파라미터 설정은 다음 설치 단계로 넘어가기 전에 수동으로 하길 권한다. 만약 설치 완료 후에 설정하려면, $ALTIBASE_HOME/install/pre_install.sh 파일을 참고하기 바란다.</p>
+</div>
+</div>
+<p>Altibase가 올바르게 실행될 것을 보장하기 위해서 먼저 시스템 환경을 설정할 필요가 있다.<br>
+Altibase 설치 전에 root 사용자 권한으로 커널 파라미터 값을 조정해야 한다. 커널 파라미터 값은 설치 후에 설정해도 되지만 Altibase를 구동하기 전에는 설정해야 한다.
+아래는 각 OS별 시스템 커널 파라미터의 권장 값을 보여주는 예제이다. OS별 커널 파라미터에 대한 자세한 설명은 부록에 있는 "<a href="../A.%EB%B6%80%EB%A1%9D-%EC%84%A4%EC%B9%98-%EC%A0%84-%ED%99%95%EC%9D%B8-%EC%82%AC%ED%95%AD/">설치 전 확인 사항</a>"을 참조한다.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HPUX</label><label for="__tabbed_1_2">LINUX</label><label for="__tabbed_1_3">AIX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="w"> </span>Recommended<span class="w"> </span>Kernel<span class="w"> </span>Parameter<span class="w"> </span>Values<span class="w"> </span><span class="o">]</span>
+
+<span class="nv">shmmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2147483648</span>
+<span class="nv">shmmni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="w"> </span>
+<span class="nv">shmseg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>
+<span class="nv">semmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1001</span>
+<span class="nv">semmni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span>
+<span class="nv">semmns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4096</span>
+<span class="nv">semmnu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span>
+<span class="nv">semume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span>
+<span class="nv">max_thread_proc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">600</span>
+<span class="nv">maxusers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">64</span>
+<span class="nv">dbc_min_pct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+<span class="nv">dbc_max_pct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+<span class="nv">maxdsiz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1073741824</span>
+<span class="nv">maxdsiz_64bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4294967296</span><span class="w"> </span>
+
+<span class="c1"># maxdsiz_64bit</span>
+The<span class="w"> </span>Altibase<span class="w"> </span>server<span class="w"> </span>needs<span class="w"> </span>sufficient<span class="w"> </span>memory<span class="w"> </span>space<span class="w"> </span>to<span class="w"> </span><span class="k">function</span><span class="w"> </span>properly.
+Please<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>value<span class="w"> </span>to<span class="w"> </span><span class="m">70</span>%<span class="w"> </span>of<span class="w"> </span>system<span class="w"> </span>memory<span class="w"> </span>or<span class="w"> </span>greater.
+
+<span class="c1"># dbc_min_pct and dbc_max_pct </span>
+dbc_min_pct<span class="w"> </span>and<span class="w"> </span>dbc_max_pct<span class="w"> </span>were<span class="w"> </span>renamed<span class="w"> </span>filecache_min<span class="w"> </span>and<span class="w"> </span>filecache_max,<span class="w"> </span>respectively,<span class="w"> </span><span class="k">in</span><span class="w"> </span>HP<span class="w"> </span>version<span class="w"> </span><span class="m">11</span>.31<span class="w"> </span>and<span class="w"> </span>subsequent<span class="w"> </span>releases.
+
+<span class="o">[</span><span class="w"> </span>How<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>kernel<span class="w"> </span>parameter<span class="w"> </span>values<span class="w"> </span><span class="o">]</span><span class="w"> </span>
+
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">shmmax</span><span class="o">=</span><span class="m">2147483648</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">shmmni</span><span class="o">=</span><span class="m">500</span><span class="w"> </span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">shmseg</span><span class="o">=</span><span class="m">200</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">semmap</span><span class="o">=</span><span class="m">1001</span><span class="w"> </span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">semmni</span><span class="o">=</span><span class="m">1000</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">semmns</span><span class="o">=</span><span class="m">4096</span><span class="w"> </span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">semmnu</span><span class="o">=</span><span class="m">1000</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">semume</span><span class="o">=</span><span class="m">1000</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">max_thread_proc</span><span class="o">=</span><span class="m">600</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">maxusers</span><span class="o">=</span><span class="m">64</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">dbc_min_pct</span><span class="o">=</span><span class="m">5</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">dbc_max_pct</span><span class="o">=</span><span class="m">5</span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">maxdsiz</span><span class="o">=</span><span class="m">1073741824</span><span class="w"> </span>
+/usr/sbin/kmtune<span class="w"> </span>-s<span class="w"> </span><span class="nv">maxdsiz_64bit</span><span class="o">=</span><span class="m">4294967296</span>
+
+<span class="c1"># maxdsiz_64bit</span>
+The<span class="w"> </span>Altibase<span class="w"> </span>server<span class="w"> </span>needs<span class="w"> </span>sufficient<span class="w"> </span>memory<span class="w"> </span>space<span class="w"> </span><span class="k">in</span><span class="w"> </span>order<span class="w"> </span>to<span class="w"> </span><span class="k">function</span><span class="w"> </span>properly.
+Please<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>value<span class="w"> </span>to<span class="w"> </span><span class="m">70</span>%<span class="w"> </span>of<span class="w"> </span>system<span class="w"> </span>memory<span class="w"> </span>or<span class="w"> </span>greater.
+
+<span class="c1"># dbc_min_pct and dbc_max_pct </span>
+dbc_min_pct<span class="w"> </span>and<span class="w"> </span>dbc_max_pct<span class="w"> </span>were<span class="w"> </span>renamed<span class="w"> </span>filecache_min<span class="w"> </span>and<span class="w"> </span>filecache_max,<span class="w"> </span>respectively,<span class="w"> </span><span class="k">in</span><span class="w"> </span>HP<span class="w"> </span>version<span class="w"> </span><span class="m">11</span>.31<span class="w"> </span>and<span class="w"> </span>subsequent<span class="w"> </span>releases.
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="w"> </span>How<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>kernel<span class="w"> </span>parameter<span class="w"> </span>values<span class="w"> </span><span class="o">]</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="m">32000</span><span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="m">512</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/kernel/sem
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="w"> </span>Recommended<span class="w"> </span>Kernel<span class="w"> </span>Parameter<span class="w"> </span>Values<span class="w"> </span><span class="o">]</span>
+
+<span class="nv">fsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1
+<span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1
+<span class="nv">rss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1
+
+Maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>PROCESSES<span class="w"> </span>allowed<span class="w"> </span>per<span class="w"> </span><span class="nv">user</span>
+<span class="w">    </span><span class="o">=</span><span class="w"> </span>greater<span class="w"> </span>than<span class="w"> </span>the<span class="w"> </span>value<span class="w"> </span><span class="nb">set</span><span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>Altibase<span class="w"> </span>property<span class="w"> </span>MAX_CLIENT
+
+Size<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>File<span class="w"> </span>System<span class="w"> </span><span class="nv">BufferCache</span>
+<span class="w">    </span><span class="o">=</span><span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span><span class="m">20</span>%<span class="w"> </span>of<span class="w"> </span>total<span class="w"> </span>memory.
+
+<span class="nv">AIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Available
+
+<span class="nv">AMO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AIX<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.2<span class="w"> </span>ML04<span class="w"> </span>and<span class="w"> </span>above
+<span class="w">            </span><span class="nv">lru_file_repage</span><span class="o">=</span><span class="m">0</span>
+<span class="w">            </span>strict_maxclient%<span class="o">=</span><span class="nv">0</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span>Versions<span class="w"> </span>prior<span class="w"> </span>to<span class="w"> </span>AIX<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.2<span class="w"> </span>ML04
+<span class="w">            </span><span class="nv">lru_file_repage</span><span class="o">=</span><span class="m">0</span>
+
+<span class="o">[</span><span class="w"> </span>How<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>kernel<span class="w"> </span>parameter<span class="w"> </span>values<span class="w"> </span><span class="o">]</span>
+
+Edit<span class="w"> </span>/etc/security/limits<span class="w"> </span>file
+Set<span class="w"> </span>fsize,<span class="w"> </span>data<span class="w"> </span>and<span class="w"> </span>rss<span class="w"> </span>variables.
+
+Run<span class="w"> </span><span class="s1">&#39;smit&#39;</span>
+<span class="w">    </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>System<span class="w"> </span>Environments
+<span class="w">    </span>System<span class="w"> </span>Environments<span class="w"> </span>-&gt;<span class="w"> </span>Change<span class="w"> </span>/<span class="w"> </span>Show<span class="w"> </span>Characteristics<span class="w"> </span>Of<span class="w"> </span>Operating<span class="w"> </span>System
+<span class="w">    </span>Change<span class="w"> </span>:<span class="w"> </span>
+<span class="w">        </span>Maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>PROCESSES<span class="w"> </span>allowed<span class="w"> </span>per<span class="w"> </span><span class="nv">user</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span>bigger<span class="w"> </span>than<span class="w"> </span>the<span class="w"> </span>value<span class="w"> </span><span class="nb">set</span><span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>Altibase<span class="w"> </span>property<span class="w"> </span>MAX_CLIENT
+<span class="w">        </span>Size<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>File<span class="w"> </span>System<span class="w"> </span><span class="nv">BufferCache</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span><span class="m">20</span>%<span class="w"> </span>of<span class="w"> </span>total<span class="w"> </span>memory.
+<span class="w">    </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>AIO<span class="w"> </span>
+<span class="w">        </span>Device<span class="w"> </span>-&gt;<span class="w"> </span>Asynchronous<span class="w"> </span>I/O<span class="w"> </span>-&gt;<span class="w"> </span>Posix<span class="w"> </span>Asynchronous<span class="w"> </span>I/O<span class="w"> </span>-&gt;<span class="w"> </span>Configure<span class="w"> </span>Defined<span class="w"> </span>Asynchronous<span class="w"> </span>I/O
+<span class="w">        </span>Change<span class="w"> </span>:<span class="w"> </span><span class="nv">posix_aio0</span><span class="o">=</span>Available
+
+<span class="w">    </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>AMO<span class="w"> </span>
+<span class="w">        </span>Performance<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Resource<span class="w"> </span>Scheduling<span class="w"> </span>-&gt;<span class="w"> </span>Tuning<span class="w"> </span>Kernel<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Network<span class="w"> </span>Parameters<span class="w"> </span>-&gt;<span class="w"> </span>Tuning<span class="w"> </span>Virtual<span class="w"> </span>Memory<span class="w"> </span>Manager,<span class="w"> </span>File<span class="w"> </span>System<span class="w"> </span>and<span class="w"> </span>Logical<span class="w"> </span>Volume<span class="w"> </span>
+<span class="w">            </span>Manager<span class="w"> </span>Params<span class="w"> </span>-&gt;
+<span class="w">            </span>+<span class="w"> </span>List<span class="w"> </span>All<span class="w"> </span>Characteristics<span class="w"> </span>of<span class="w"> </span>Current<span class="w"> </span>Parameters<span class="w"> </span>---<span class="w"> </span>Check
+<span class="w">            </span>+<span class="w"> </span>Change<span class="w"> </span>/<span class="w"> </span>Show<span class="w"> </span>Current<span class="w"> </span>Parameters<span class="w"> </span>---<span class="w"> </span>Current<span class="w"> </span>Change
+<span class="w">            </span>+<span class="w"> </span>Change<span class="w"> </span>/<span class="w"> </span>Show<span class="w"> </span>Parameters<span class="w"> </span><span class="k">for</span><span class="w"> </span>Next<span class="w"> </span>Boot<span class="w"> </span>---<span class="w"> </span>Change<span class="w"> </span>upon<span class="w"> </span>Reboot
+
+<span class="w">        </span>The<span class="w"> </span><span class="k">case</span><span class="w"> </span>of<span class="w"> </span>AIX<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.2<span class="w"> </span>ML04<span class="w"> </span>and<span class="w"> </span>above<span class="w"> </span>:
+<span class="w">            </span>Change<span class="w"> </span>:<span class="w"> </span><span class="nv">lru_file_repage</span><span class="o">=</span><span class="m">0</span>
+<span class="w">                </span>strict_maxclient%<span class="o">=</span><span class="m">0</span>
+<span class="w">        </span>The<span class="w"> </span><span class="k">case</span><span class="w"> </span>of<span class="w"> </span>Versions<span class="w"> </span>prior<span class="w"> </span>to<span class="w"> </span>AIX<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.2<span class="w"> </span>ML04<span class="w"> </span>:
+<span class="w">            </span>Change<span class="w"> </span>:<span class="w"> </span><span class="nv">lru_file_repage</span><span class="o">=</span><span class="m">0</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="altibase-프로퍼티-설정">Altibase 프로퍼티 설정<a class="headerlink" href="#altibase-프로퍼티-설정" title="Permanent link">#</a></h4>
+<p>Altibase 프로퍼티를 설정하는 단계는 다음의 세 단계로 구분된다.</p>
+<p><a href="#step-1-basic-database-operation-properties">Step 1: Basic Database Operation Properties</a></p>
+<p><a href="#step-2-database-creation-properties">Step 2: Database Creation Properties</a></p>
+<p><a href="#step-3-set-database-directories">Step 3: Set Database Directories</a></p>
+<h5 id="step-1-basic-database-operation-properties">Step 1: Basic Database Operation Properties<a class="headerlink" href="#step-1-basic-database-operation-properties" title="Permanent link">#</a></h5>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/96c02b73256cb721f7e230c5acfd93d4.png" width="720" /></p>
+<ul>
+<li>데이터베이스 이름</li>
+<li>연결 포트 번호</li>
+<li>메모리 데이터베이스의 최대 크기</li>
+<li>버퍼 크기</li>
+<li>
+<p>새로운 데이터베이스를 생성하기 위한 SQL 스크립트를 생성할 것인지를 지정 (즉 2단계를 수행할 지 말지)<br></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>YES를 선택하면 2단계를 수행하고, 그렇지 않으면 2단계를 건너뛴다. 이 과정을 이용해서 SQL 스크립트가 생성되는지에 상관없이, 새로운 데이터베이스는 다음 구문을 사용해서 생성할 수 있다.<br>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>DB<span class="w"> </span>Character-set<span class="o">]</span><span class="w"> </span><span class="o">[</span>National<span class="w"> </span>Character-set<span class="o">]</span>
+</code></pre></div></p>
+</div>
+</li>
+</ul>
+</div>
+<h5 id="step-2-database-creation-properties">Step 2: Database Creation Properties<a class="headerlink" href="#step-2-database-creation-properties" title="Permanent link">#</a></h5>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/006fa29415634bbc7f65c7657c965ed9.png" width="720" /></p>
+<ul>
+<li>초기 데이터베이스 이름</li>
+<li>데이터베이스 아카이브 로깅 모드<ul>
+<li>Noarchivelog</li>
+<li>Archivelog</li>
+</ul>
+</li>
+<li>데이터베이스 문자 셋<ul>
+<li>MS949</li>
+<li>US7ASCII</li>
+<li>KO16KSC5601</li>
+<li>BIG5</li>
+<li>GB231280</li>
+<li>MS936</li>
+<li>UTF-8</li>
+<li>SHIFT-JIS</li>
+<li>MS932</li>
+<li>EUC-JP</li>
+</ul>
+</li>
+<li>국가 문자 셋<ul>
+<li>UTF-16</li>
+<li>UTF-8
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>!!! tip
+    2단계에서 생성된 SQL 스크립트는 \$ALTIBASE_HOME/install/post_install.sh 파일에 저장된다.</p>
+<h5 id="step-3-set-database-directories">Step 3: Set Database Directories<a class="headerlink" href="#step-3-set-database-directories" title="Permanent link">#</a></h5>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/75a2d1ee8e885db5bfb249719ef9a34b.png" width="720" /></p>
+<ul>
+<li>
+<p>기본 디스크 데이터베이스 디렉터리</p>
+</li>
+<li>
+<p>메모리 데이터베이스 디렉터리</p>
+</li>
+<li>
+<p>아카이브 로그 디렉터리</p>
+</li>
+<li>
+<p>트랜잭션 로그 디렉터리</p>
+</li>
+<li>
+<p>로그 앵커 파일 디렉터리</p>
+</li>
+</ul>
+<p>이 단계에 포함되지 않은 프로퍼티의 값을 설정하거나 단계1 또는 단계3에서 설정한 프로퍼티 값을 나중에 변경하려면, $ALTIBASE_HOME/conf/altibase.propertites 파일을 수동으로 편집하면 된다.</p>
+</div>
+<h4 id="설정한-프로퍼티-확인">설정한 프로퍼티 확인<a class="headerlink" href="#설정한-프로퍼티-확인" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/c1e7592f35eacb08ea3037037c60a327.png" width="720" /></p>
+<p>왼쪽 패널은 전 과정에서 설정한 프로퍼티의 값을 보여준다.</p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code>To change these properties after installation is complete, 
+please modify the following file:
+/home/hdb71_p/pkg_test/altibase-server-7.3/conf/altibase.properties.
+
+1. Altibase Property Settings:  
+    Step 1: Basic Database Operation Properties
+
+1) Database name: 
+     [mydb]
+2) Altibase connection port number (1024-65535): 
+     [20300]
+3) Maximum size of memory database:
+     [2G]
+
+4) Buffer area size for caching disk-based database pages:
+     [128M]
+
+2. Altibase Property Settings:
+    Step 2: Database Creation Properties
+
+1) Initial database size
+     [10M]
+
+2) Database archive logging mode
+     [noarchivelog]
+
+3) Database character set
+     [UTF8]
+
+4) National character set
+     [UTF8]
+
+3. Altibase Property Settings:
+    Step 3: Set Database Directories
+
+The database will not operate properly if any of these directories are removed.
+
+1) Disk database directory: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/dbs] 
+
+2) Memory database directory:
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/dbs] 
+
+3) Archive log directory: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/arch_logs] 
+
+4) Transaction log directory: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/logs] 
+
+5) Log Anchor file directories:
+     Directory 1: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/logs] 
+
+     Directory 2: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/logs] 
+
+     Directory 3: 
+     [/home/hdb71_p/pkg_test/altibase-server-7.3/logs] 
+</code></pre></div>
+</details>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/401054e9f1ff64cc5319553ed9567146.png" width="720" />
+이 값들을 확인 후에, “Forward” 를 클릭하면 “Ready to Install” 패널이 왼쪽처럼 보여질 것이다.<br>
+설치를 계속하려면 “Forward”를 누른다.</p>
+</div>
+<h4 id="altibase-제품-설치_1">Altibase 제품 설치<a class="headerlink" href="#altibase-제품-설치_1" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/6e4149c8cebcfc9c18603070855832ef.png" width="720" /></p>
+<p>설치가 완료되면, 인스톨러는 아래의 작업들을 GUI 화면 없이 수행한다.</p>
+<ul>
+<li>
+<p>설정한 프로퍼티가 altibase.properties 파일에 업데이트 된다.</p>
+</li>
+<li>
+<p>Altibase 서버 구동을 위한 기본 환경이 수록되어 있는 altibase_user.env 파일이 $ALTIBASE_HOME/conf 디렉터리에 생성된다. 그리고 이 파일을 실행하는 명령어가 사용자 계정의 환경 설정 파일(.bashrc 또는 .bash_profile 또는 .profile 등)에 추가된다.</p>
+</li>
+</ul>
+</div>
+<p>아래는 altibase_user.env 파일과 사용자 환경 설정 파일 .bash_profile의 예제이다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">altibase_user.env</label><label for="__tabbed_2_2">.bash_profile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">ALTIBASE_HOME</span><span class="o">=</span>/home/hdb71_p/pkg_test/altibase-server-7.3<span class="p">;</span><span class="nb">export</span><span class="w"> </span>ALTIBASE_HOME<span class="w"> </span>
+<span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">ALTIBASE_HOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="p">;</span><span class="nb">export</span><span class="w"> </span>PATH<span class="w"> </span>
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">ALTIBASE_HOME</span><span class="si">}</span>/lib:<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span><span class="p">;</span><span class="nb">export</span><span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span>
+<span class="nv">CLASSPATH</span><span class="o">=</span><span class="si">${</span><span class="nv">ALTIBASE_HOME</span><span class="si">}</span>/lib/Altibase.jar:<span class="si">${</span><span class="nv">CLASSPATH</span><span class="si">}</span><span class="p">;</span><span class="nb">export</span><span class="w"> </span>CLASSPATH<span class="w"> </span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>.<span class="w"> </span>/home/hdb71_p/pkg_test/altibase-server-7.3/conf/altibase_user.env
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="altibase-라이선스-입력">Altibase 라이선스 입력<a class="headerlink" href="#altibase-라이선스-입력" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/d68302cf8f9ada6fd563be03e9f5ffd1.png" width="720" /></p>
+<p>왼쪽은 Altibase의 라이선스 키를 입력하는 화면이다. Altibase 패키지 인스톨러는 라이선스 키를 입력하는 다음 세 가지 방법을 제공한다.</p>
+<ul>
+<li>
+<p>라이선스 키를 직접 입력</p>
+</li>
+<li>
+<p>라이선스 키가 저장된 파일 선택</p>
+</li>
+<li>
+<p>라이선스 추후 등록: 라이선스 키를 아직까지 얻지 못했다면, 나중에 라이선스 키를 획득한 후, $ALTIBASE_HOME/conf 디렉터리에 새 라이선스 파일을 복사하면 된다.
+    <div class="highlight"><pre><span></span><code>$ cp license $ALTIBASE_HOME/conf/
+</code></pre></div>
+    !!! note
+    이 과정에서 라이선스 키를 등록하지 않으면 다음 단계에서 데이터베이스를 생성할지 여부를 묻지 않는다.
+    </p>
+</li>
+</ul>
+</div>
+<h4 id="altibase-빠른-설정-가이드-미리-보기">Altibase 빠른 설정 가이드 미리 보기<a class="headerlink" href="#altibase-빠른-설정-가이드-미리-보기" title="Permanent link">#</a></h4>
+<p>Altibase 빠른 설정 가이드 패널은 설치 성공 후에 Altibase를 어떻게 구동할 것인지를 안내한다.</p>
+<p>Altibase 패키지 인스톨러는 사용자들이 좀 더 쉽게 시스템 커널 파라미터와 환경변수를 설정하도록 다음의 두 쉘 스크립트를 제공한다.</p>
+<ul>
+<li>
+<p>$ALTIBASE_HOME/install/pre_install.sh<br />
+    이 스크립트는 필수 시스템 커널 파라미터의 최소 집합을 포함하며, 그들의 권장 값과 어떻게 설정하는지에 대해서 설명한다.</p>
+</li>
+<li>
+<p>$ALTIBASE_HOME/install/post_install.sh<br />
+    이 스크립트는 Altibase 프로퍼티 설정 과정에서 단계2를 수행했다면 새로운 데이터베이스를 생성하기 위한 SQL 스크립트를 포함한다.</p>
+</li>
+<li>
+<p>$ALTIBASE_HOME/packages/catproc.sql<br />
+    이 스크립트는 PSM을 사용하기 위한 SQL 스크립트를 포함한다.</p>
+</li>
+</ul>
+<p>다음 패널에서 체크 박스를 선택하면 Altibase 패키지 인스톨러는 새로운 데이터베이스를 생성하고 PSM을 사용하기 위한 스크립트를 실행할 것이며, 이로 인해 설치 시간이 조금 더 소요될 것이다. 체크 박스를 선택하지 않을 경우, 제품 설치 후에 수동으로 데이터베이스 생성 및 PSM 스크립트를 실행해야 한다.</p>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/1a8e37e6dcd41953d2f266889642d3d0.png" width="720" /></p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="w">  </span>Installation<span class="w"> </span><span class="nb">complete</span><span class="w">  </span><span class="o">]</span>
+Please<span class="w"> </span>refer<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>listed<span class="w"> </span>below<span class="w"> </span>to<span class="w"> </span>verify<span class="w"> </span>the<span class="w"> </span>Altibase<span class="w"> </span>version.
+<span class="w"> </span>/home/hdb71_p/pkg_test/altibase-server-7.3/APatch/patchinfo<span class="w"> </span>
+
+<span class="o">[</span><span class="w"> </span>Quick<span class="w"> </span>Guide<span class="w"> </span>to<span class="w"> </span>Making<span class="w"> </span>Settings<span class="w"> </span><span class="k">in</span><span class="w"> </span>Altibase<span class="w"> </span><span class="o">]</span><span class="w"> </span>
+
+<span class="m">1</span>.<span class="w"> </span>Set<span class="w"> </span>kernel<span class="w"> </span>variables<span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>root<span class="w"> </span>user<span class="w"> </span>account.
+<span class="w">    </span>run<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;/home/hdb71_p/pkg_test/altibase-server-7.3/install/pre_install.sh&#39;</span><span class="w"> </span>file<span class="w"> </span>
+<span class="w">    </span>-<span class="w"> </span>This<span class="w"> </span>script<span class="w"> </span>helps<span class="w"> </span>you<span class="w"> </span>make<span class="w"> </span>kernel<span class="w"> </span>parameter<span class="w"> </span>settings.
+
+<span class="o">================</span><span class="w"> </span><span class="nv">LINUX</span><span class="w"> </span><span class="o">================</span>
+<span class="o">[</span><span class="w"> </span>How<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>kernel<span class="w"> </span>parameter<span class="w"> </span>values<span class="w"> </span><span class="o">]</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="m">32000</span><span class="w"> </span><span class="m">512</span><span class="w"> </span><span class="m">512</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/kernel/sem
+
+These<span class="w"> </span>values<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>order<span class="w"> </span><span class="k">for</span><span class="w"> </span>Altibase<span class="w"> </span>to<span class="w"> </span>operate<span class="w"> </span>properly.
+They<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span><span class="nb">set</span><span class="w"> </span>such<span class="w"> </span>that<span class="w"> </span>they<span class="w"> </span>are<span class="w"> </span>suitable<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>system<span class="w"> </span>configuration.
+
+<span class="o">=====================================</span>
+
+
+<span class="m">2</span>.<span class="w"> </span>Provide<span class="w"> </span>a<span class="w"> </span>license.
+<span class="w">    </span>Please<span class="w"> </span>rename<span class="w"> </span>and<span class="w"> </span>locate<span class="w"> </span>the<span class="w"> </span>license<span class="w"> </span>file<span class="w"> </span>as<span class="w"> </span>shown<span class="w"> </span>below.
+<span class="w">    </span>/home/hdb71_p/pkg_test/altibase-server-7.3/conf/license<span class="w"> </span>
+
+<span class="w">    </span>If<span class="w"> </span>no<span class="w"> </span>license<span class="w"> </span>file<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>issued,<span class="w"> </span>or<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>license<span class="w"> </span>file<span class="w"> </span>has<span class="w"> </span>expired,
+<span class="w">    </span>Altibase<span class="w"> </span>services<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>start.
+<span class="w">    </span>In<span class="w"> </span>this<span class="w"> </span><span class="k">case</span>,<span class="w"> </span>please<span class="w"> </span>visit<span class="w"> </span>http://support.altibase.com.
+
+
+<span class="m">3</span>.<span class="w"> </span>Configure<span class="w"> </span>user<span class="w"> </span>environment<span class="w"> </span>variables<span class="w"> </span><span class="o">(</span>using<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>account<span class="w"> </span>with<span class="w"> </span>
+<span class="w">    </span>which<span class="w"> </span>Altibase<span class="w"> </span>was<span class="w"> </span>installed<span class="o">)</span>.
+<span class="w">    </span>Run<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;/home/hdb71_p/pkg_test/altibase-server-7.3/install/post_install.sh&#39;</span><span class="w"> </span>file<span class="w"> </span>
+<span class="w">    </span>under<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>with<span class="w"> </span>which<span class="w"> </span>Altibase<span class="w"> </span>was<span class="w"> </span>installed.
+
+<span class="w">    </span>This<span class="w"> </span>script<span class="w"> </span>performs<span class="w"> </span>necessary<span class="w"> </span>post-installation<span class="w"> </span>configuration.<span class="w"> </span>
+
+<span class="w">    </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>Altibase<span class="w"> </span>user<span class="w"> </span>environment<span class="w"> </span>file<span class="w"> </span>and<span class="w"> </span>apply<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>profile.
+<span class="w">         </span><span class="o">(</span>/home/hdb71_p/pkg_test/altibase-server-7.3/conf/altibase_user.env<span class="o">)</span>
+<span class="w">    </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>Create<span class="w"> </span>a<span class="w"> </span>database.
+
+<span class="w">         </span>If<span class="w"> </span>you<span class="w"> </span>selected<span class="w"> </span><span class="s1">&#39;YES&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>response<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>question<span class="w"> </span>about<span class="w"> </span>whether<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>
+<span class="w">         </span>a<span class="w"> </span>database<span class="w"> </span>after<span class="w"> </span>installation,<span class="w"> </span>at<span class="w"> </span><span class="s2">&quot;Altibase Property setting step 1&quot;</span>,<span class="w"> </span>
+<span class="w">         </span>a<span class="w"> </span>database<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>automatically<span class="w"> </span>created.
+
+<span class="w">         </span>If<span class="w"> </span>you<span class="w"> </span>selected<span class="w"> </span><span class="s1">&#39;NO&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>response<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>question,
+<span class="w">         </span>you<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>database<span class="w"> </span>manually.
+
+<span class="w">         </span>shell&gt;<span class="w"> </span>server<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>DB<span class="w"> </span>Character<span class="w"> </span>Set<span class="o">]</span><span class="w"> </span><span class="o">[</span>National<span class="w"> </span>Character<span class="w"> </span>Set<span class="o">]</span>
+
+<span class="m">4</span>.<span class="w"> </span>Start<span class="w"> </span>up<span class="w"> </span>and<span class="w"> </span>shut<span class="w"> </span>down<span class="w"> </span>the<span class="w"> </span>server
+<span class="w">    </span>shell&gt;<span class="w"> </span>server<span class="w"> </span>start
+<span class="w">    </span>shell&gt;<span class="w"> </span>server<span class="w"> </span>stop
+
+<span class="m">5</span>.<span class="w"> </span>Runs<span class="w"> </span>all<span class="w"> </span>scripts<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>or<span class="w"> </span>used<span class="w"> </span>with<span class="w"> </span>PSM
+Run<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;/home/hdb71_p/pkg_test/altibase-server-7.3/packages/catproc.sql&#39;</span><span class="w"> </span>file.
+
+<span class="m">6</span>.<span class="w"> </span>Connect<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>database<span class="w"> </span>using<span class="w"> </span>iSQL
+<span class="w">    </span>shell&gt;<span class="w"> </span>isql<span class="w"> </span>-s<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>-u<span class="w"> </span>SYS<span class="w"> </span>-p<span class="w"> </span>MANAGER
+</code></pre></div>
+</details>
+<p>아래의 창은 데이터베이스 생성 중에 나타나는 화면이다.</p>
+<p><img alt="" src="../../media/Installation/f289dba1b44f511faa8b377dbaf8df9f.png" /></p>
+<p><img alt="" src="../../media/Installation/1d6234c4aeee08b8869e67cada559bc2.png" /></p>
+<h4 id="설치-종료">설치 종료<a class="headerlink" href="#설치-종료" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/84f7c707cf2fa6d78f2ac9ecd56b3cc4.png" width="720" />
+성공적인 설치 후 왼쪽 패널이 나타난다.</p>
+</div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/9e24e6d10bafc5336190f19495ec2b07.png" width="720" />
+Finish 버튼을 누르면 왼쪽과 같이 환경 설정 가이드 화면이 나타난다.</p>
+</div>
+<h4 id="설치-후-작업">설치 후 작업<a class="headerlink" href="#설치-후-작업" title="Permanent link">#</a></h4>
+<p>성공적인 설치 후, 아래의 작업을 해야 한다.</p>
+<ol>
+<li>
+<p>시스템 커널 파라미터를 설치 과정 중에 설정하지 않았다면, 수동으로 이를 설정한다. $ALTIBASE_HOME/install/pre_install.sh 파일을 참고한다.</p>
+</li>
+<li>
+<p>로그인 쉘 스크립트를 실행시키기 위해서, 다음 중 하나를 수행한다.</p>
+<ul>
+<li>로그아웃 후 다시 로그인</li>
+<li>. ~/.bash_profile 실행</li>
+<li>source ~/.bash_profile 실행</li>
+</ul>
+</li>
+<li>
+<p>인스톨러 설치 단계에서 데이터베이스 생성을 하지 않은 경우, 아래와 같이 생성한다.</p>
+<ul>
+<li>설치 단계에서 데이터베이스 생성을 위한 프로퍼티를 입력한 경우, $ALTIBASE_HOME/install/post_install.sh 스크립트를 실행하라.  </li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sh<span class="w"> </span>post_install.sh<span class="w"> </span>dbcreate
+</code></pre></div>
+<ul>
+<li>설치 단계에서 데이터베이스 생성을 위한 프로퍼티를 입력하지 않은 경우, server 스크립트를 실행하라.  </li>
+</ul>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>server<span class="w"> </span>create<span class="w"> </span>utf8<span class="w"> </span>utf8
+</code></pre></div>
+<ul>
+<li>설치단계에서 PSM 사용을 위한 프로퍼티를 입력하지 않은 경우, catproc.sql 을 실행하라.  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="n">isql</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">sys</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">-</span><span class="n">silent</span><span class="w"> </span><span class="o">-</span><span class="n">f</span>
+<span class="err">${</span><span class="n">ALTIBASE_HOME</span><span class="err">}</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">catproc</span><span class="p">.</span><span class="k">sql</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="altibase-클라이언트-제품-설치">Altibase 클라이언트 제품 설치<a class="headerlink" href="#altibase-클라이언트-제품-설치" title="Permanent link">#</a></h3>
+<p>Altibase 제품을 설치하는 방법을 다음의 절에서 설명한다.</p>
+<ul>
+<li>
+<p>설치 환경 사전 확인</p>
+</li>
+<li>
+<p>Altibase 패키지 인스톨러 다운로드</p>
+</li>
+<li>
+<p>설치 모드 설정</p>
+</li>
+<li>
+<p>Altibase 패키지 인스톨러 시작</p>
+</li>
+<li>
+<p>설치 디렉터리 입력 및 설치 타입 선택</p>
+</li>
+<li>
+<p>Altibase 클라이언트 프로퍼티 설정</p>
+</li>
+<li>
+<p>Altibase 클라이언트 제품 설치</p>
+</li>
+<li>
+<p>설치 종료</p>
+</li>
+<li>
+<p>설치 후 작업</p>
+</li>
+</ul>
+<h4 id="설치-환경-사전-확인_1">설치 환경 사전 확인<a class="headerlink" href="#설치-환경-사전-확인_1" title="Permanent link">#</a></h4>
+<p>“Altibase 제품 설치”절 내의 "설치 환경 사전 확인"을 참고한다.</p>
+<h4 id="altibase-패키지-인스톨러-다운로드">Altibase 패키지 인스톨러 다운로드<a class="headerlink" href="#altibase-패키지-인스톨러-다운로드" title="Permanent link">#</a></h4>
+<p>Altibase 패키지 인스톨러는 <a href="http://support.altibase.com/">Altibase 고객지원서비스 포털</a>을 방문하여 본인의 운영 체제에 적합한 인스톨러를 다운로드 받는다.</p>
+<p>Altibase가 제공하는 운영 체제별 인스톨러는 <a href="#패키지-인스톨러-다운로드">패키지 인스톨러 다운로드</a>를 참조하기 바란다.</p>
+<h4 id="설치-모드-설정_1">설치 모드 설정<a class="headerlink" href="#설치-모드-설정_1" title="Permanent link">#</a></h4>
+<p>유닉스 시스템에서 GUI 모드로 패키지 인스톨러를 시작하려면 “Altibase 제품 설치”절 내의 “설치 모드 설정"을 참고한다.</p>
+<h4 id="altibase-패키지-인스톨러-시작_1">Altibase 패키지 인스톨러 시작<a class="headerlink" href="#altibase-패키지-인스톨러-시작_1" title="Permanent link">#</a></h4>
+<p>유닉스 사용자는 Altibase 패키지 인스톨러를 다운로드 한 후 chmod로 파일 권한을 변경해야 실행할 수 있다.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>altibase-client-7.3.0.0.0-LINUX-X86-64bit-release.run
+</code></pre></div>
+<p>Altibase 패키지 인스톨러를 실행한다.</p>
+<div class="highlight"><pre><span></span><code>$./altibase-client-7.3.0.0.0-LINUX-X86-64bit-release.run
+</code></pre></div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/28d488436e82b2d223baf2e9711f7c66.png" width="720" />
+설치 모드를 GUI 모드로 설정하였다면, 왼쪽과 같은 시작 패널이 보여진다.</p>
+</div>
+<h4 id="설치-디렉터리-입력-및-설치-타입-선택_1">설치 디렉터리 입력 및 설치 타입 선택<a class="headerlink" href="#설치-디렉터리-입력-및-설치-타입-선택_1" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/c3d3d69d62b14b44337da6533bf95c37.png" width="720" />
+아래 설치 디렉터리 패널에서는 Altibase 홈 디렉터리, 즉 Altibase 클라이언트 제품이 설치될 디렉터리와 클라이언트 패키지 설치 타입을 선택한다.<br>
+Altibase 클라이언트 설치를 원하는 경우 “Full Installation” 를, 기존 설치되어 있는 버전에 대한 패치를 원하는 경우 “Patch Installation” 를 선택한다.</p>
+</div>
+<h4 id="altibase-클라이언트-프로퍼티-설정">Altibase 클라이언트 프로퍼티 설정<a class="headerlink" href="#altibase-클라이언트-프로퍼티-설정" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/46259f979d31c23c9721a819ebdf3ece.png" width="720" />
+Altibase 클라이언트 프로퍼티 패널에서는 클라이언트가 TCP/IP로 서버에 접속할 때 사용할 통신 포트 번호를 입력한다. 이 포트 번호는 .profile 또는 .bash_profile 같은 사용자 계정의 환경 설정 파일에 저장된다.</p>
+</div>
+<h4 id="altibase-클라이언트-제품-설치_1">Altibase 클라이언트 제품 설치<a class="headerlink" href="#altibase-클라이언트-제품-설치_1" title="Permanent link">#</a></h4>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/ce225e78dc5e162ad9b00408069052bf.png" width="720" />
+계속 진행하려면 "Forward"를 누른다.</p>
+</div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/f35362320f1fd81ad583053940539821.png" width="720" /></p>
+</div>
+<div class="image_description">
+<p><img align="left" alt="" src="../../media/Installation/1b8ec1cac1dbdc7f9499020d4a34930e.png" width="720" />
+이 과정 동안 왼쪽의 다이얼로그 박스에서 보여주는 Altibase 클라이언트 제품과 관련 있는 환경 변수는 로그인 쉘 (예를 들어, 표준 본 쉘을 위한 기본 환경 파일은 .profile이다)을 위한 환경 파일에 추가된다.</p>
+</div>
+<p>Altibase 서버 제품 설치 시에 생성되는 altibase_user.env 파일은 여기에서는 생성되지 않는다. 새로운 환경 변수를 적용하려면, 다음 중 하나를 수행한다.</p>
+<ul>
+<li>
+<p>로그 아웃 후 다시 로그인</p>
+</li>
+<li>
+<p>. ~/.profile 실행</p>
+</li>
+<li>
+<p>source ~/.profile 실행</p>
+</li>
+</ul>
+<details class="example">
+<summary>.profile 예시</summary>
+<div class="highlight"><pre><span></span><code><span class="c1"># ALTIBASE_ENV</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALTIBASE_HOME</span><span class="o">=</span>/home/hdb71_p/altibase-client-7.3.0
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALTIBASE_PORT_NO</span><span class="o">=</span><span class="m">20300</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ALTIBASE_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">ALTIBASE_HOME</span><span class="si">}</span>/lib:<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLASSPATH</span><span class="o">=</span><span class="si">${</span><span class="nv">ALTIBASE_HOME</span><span class="si">}</span>/lib/Altibase.jar:<span class="si">${</span><span class="nv">CLASSPATH</span><span class="si">}</span>
+</code></pre></div>
+</details>
+<h4 id="설치-종료_1">설치 종료<a class="headerlink" href="#설치-종료_1" title="Permanent link">#</a></h4>
+<p><img alt="" src="../../media/Installation/39489bfe4a813b5e2d247450bae818a9.png" /></p>
+<h4 id="설치-후-작업_1">설치 후 작업<a class="headerlink" href="#설치-후-작업_1" title="Permanent link">#</a></h4>
+<p>위의 과정에서 환경변수가 쉘에 적용되지 않았다면, 지금 한다. 자세한 설명은 위의 “Altibase 클라이언트 제품 설치” 절을 참고한다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "content.code.copy", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.share"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.md-grid {
+    max-width: 100%;
+}
+
+.image_description{
+    display: inline-block;
+    width: 100%;
+}
+
+:root {
+    --md-primary-fg-color:        #105BA4;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  }
+
+html {
+    scroll-behavior: smooth;
+  }
+
+/*body {
+    min-height: 100vh;
+    width: 100%;
+}*/
