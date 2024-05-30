@@ -1,0 +1,59 @@
+site_name: Altibase Documentation
+
+theme:
+  name: material
+  palette:
+    primary: custom
+    accent: teal
+  language: ko
+  favicon: img/favicon.ico
+  logo: img/logo_w.png
+  features:
+    - navigation.path
+    - content.code.copy
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.share
+
+#extra:
+#  version:
+#    alias: true
+#  alternate:
+#    - name: English
+#      link: /en/
+#      lang: en
+#    - name: Korean
+#      link: /ko/
+#      lang: ko
+
+extra_css:
+  - custom/style.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: "#"
+      toc_depth: 4
+  - pymdownx.blocks.html:
+  - pymdownx.blocks.details:
+  - pymdownx.blocks.tab:
+  - pymdownx.caret:
+
