@@ -17,16 +17,16 @@ theme:
     - search.suggest
     - search.share
 
-#extra:
+extra:
 #  version:
 #    alias: true
-#  alternate:
-#    - name: English
-#      link: /en/
-#      lang: en
-#    - name: Korean
-#      link: /ko/
-#      lang: ko
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Korean
+      link: /ko/
+      lang: ko
 
 extra_css:
   - custom/style.css
